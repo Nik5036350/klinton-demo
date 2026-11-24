@@ -1,0 +1,75 @@
+/* Documents, clients, company and contacts pages. Tokens only (base.css). */
+
+.page-head { padding-block: var(--s-6) var(--s-7); display: grid; gap: var(--s-4); }
+.page-head h1 { font-size: var(--fs-2xl); line-height: var(--lh-tight); letter-spacing: -0.03em; max-width: 20ch; }
+.page-head .lead { color: var(--muted); max-width: 46ch; }
+
+/* document list */
+.docs { list-style: none; padding: 0; border-top: var(--rule-strong) solid currentColor; }
+.doc { display: grid; gap: var(--s-2) var(--gap); padding-block: var(--s-5); border-bottom: var(--rule) solid var(--line); align-items: center; }
+@media (min-width: 48rem) { .doc { grid-template-columns: 1fr auto; } }
+.doc__name { font-size: var(--fs-l); font-weight: var(--w-bold); }
+.doc__purpose { color: var(--muted); font-size: var(--fs-s); max-width: 56ch; }
+.doc__meta { font-size: var(--fs-xs); color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+.doc .button { white-space: nowrap; }
+
+/* requisites */
+.req { width: 100%; border-collapse: collapse; font-size: var(--fs-s); }
+.req caption { text-align: left; font-size: var(--fs-l); font-weight: var(--w-bold); padding-bottom: var(--s-3); }
+.req th, .req td { text-align: left; vertical-align: top; padding: var(--s-3) var(--s-4) var(--s-3) 0; border-bottom: var(--rule) solid var(--line); }
+.req th { font-weight: var(--w-regular); color: var(--muted); width: 38%; }
+.req td { font-feature-settings: "tnum"; overflow-wrap: anywhere; }
+.req-block { display: grid; gap: var(--s-6); }
+.req-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+
+/* letters */
+/* two per row even on phones: a letter is read full-size in the viewer */
+.letters { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(45%, 15rem), 1fr)); gap: var(--s-6) var(--s-4); list-style: none; padding: 0; }
+@media (min-width: 40rem) { .letters { gap: var(--s-7) var(--gap); } }
+.letter a { display: block; text-decoration: none; }
+.letter picture { display: block; border: var(--rule) solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--scan); transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.letter a:hover picture { transform: translateY(-3px); box-shadow: 0 18px 32px -20px rgb(0 0 0 / 0.45); }
+/* a 4:5 crop of the letterhead: uniform cards, and the page heading stays the largest element on a phone */
+.letter img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; }
+.letter__client { display: block; margin-top: var(--s-4); font-weight: var(--w-bold); line-height: var(--lh-snug); }
+.letter__what { display: block; margin-top: var(--s-1); font-size: var(--fs-s); color: var(--muted); }
+.letter__date { display: block; margin-top: var(--s-2); font-size: var(--fs-xs); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* letter viewer (letters.js) */
+/* margin: auto restores the centring that the global margin reset removes */
+.viewer { margin: auto; width: min(100vw - 2 * var(--margin), 48rem); max-height: calc(100svh - 2rem); padding: 0; border: 0; border-radius: var(--radius); background: var(--paper); color: var(--ink); }
+.viewer::backdrop { background: rgb(10 10 8 / 0.78); }
+.viewer__bar { position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; gap: var(--s-4); padding: var(--s-3) var(--s-3) var(--s-3) var(--s-5); background: var(--paper); border-bottom: var(--rule) solid var(--line); }
+.viewer__title { font-weight: var(--w-bold); font-size: var(--fs-s); }
+.viewer__close { min-height: var(--tap); min-width: var(--tap); border: var(--rule) solid var(--line); border-radius: var(--radius-pill); background: transparent; cursor: pointer; font-weight: var(--w-bold); padding-inline: var(--s-4); }
+.viewer img { width: 100%; height: auto; background: var(--scan); }
+
+/* company page */
+.quality { display: grid; gap: var(--s-6) var(--gap); }
+@media (min-width: 60rem) { .quality { grid-template-columns: 1fr 1fr; } }
+.quote { border-left: var(--rule-strong) solid var(--accent); padding-left: var(--s-5); }
+.quote p { font-size: var(--fs-l); line-height: 1.4; }
+.quote footer { margin-top: var(--s-3); font-size: var(--fs-s); color: var(--muted); }
+.director { background: var(--surface); border-radius: var(--radius); padding: var(--s-6); display: grid; gap: var(--s-3); align-content: start; }
+.director h3 { font-size: var(--fs-xl); line-height: 1.1; }
+.director a[href^="tel:"] { font-size: var(--fs-l); font-weight: var(--w-bold); text-decoration: none; }
+
+/* contacts page */
+.contact-grid { display: grid; gap: var(--s-7) var(--gap); }
+@media (min-width: 60rem) { .contact-grid { grid-template-columns: 5fr 7fr; } }
+.contact-list { list-style: none; padding: 0; border-top: var(--rule-strong) solid currentColor; }
+.contact-list li { display: grid; gap: var(--s-1); padding-block: var(--s-4); border-bottom: var(--rule) solid var(--line); }
+.contact-list span { font-size: var(--fs-xs); color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.contact-list strong, .contact-list a { font-size: var(--fs-l); font-weight: var(--w-bold); text-decoration: none; }
+.map { display: block; border-radius: var(--radius); overflow: hidden; border: var(--rule) solid var(--line); }
+.map img { width: 100%; height: auto; }
+.map__caption { display: flex; justify-content: space-between; gap: var(--s-4); flex-wrap: wrap; margin-top: var(--s-3); font-size: var(--fs-xs); color: var(--muted); }
+
+/* print: requisites and contacts on one sheet */
+@media print {
+  .docs, .req-actions, .letters, .crumbs { display: none !important; }
+  .req { font-size: 10pt; }
+  .req th, .req td { padding: 3pt 6pt 3pt 0; }
+  .page-head { padding: 0 0 8pt; }
+  .page-head h1 { font-size: 16pt; }
+}

@@ -1,0 +1,19 @@
+/* Only for /_style/ (deleted before launch). Uses tokens from base.css. */
+.sp-hero { padding-block: var(--s-8) var(--s-9); }
+.sp-hero__title { max-width: 18ch; margin-top: var(--s-5); }
+.sp-unit { font-size: 0.42em; letter-spacing: -0.02em; vertical-align: 0.95em; margin-left: 0.04em; }
+.sp-actions, .sp-row { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); align-items: center; }
+.sp-panel { padding: var(--s-5); border-radius: var(--radius); }
+.sp-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); gap: var(--s-3); }
+.sp-swatch { border: var(--rule) solid var(--line); border-radius: var(--radius); padding: var(--s-7) var(--s-3) var(--s-3); font-size: var(--fs-xs); color: var(--muted); background: var(--paper); }
+.sp-swatch span { display: block; font-weight: var(--w-bold); color: var(--ink); font-size: var(--fs-s); }
+.sp-swatch::before { content: ""; display: block; height: 3rem; margin: calc(-1 * var(--s-7) + var(--s-3)) 0 var(--s-3); border-radius: calc(var(--radius) - 2px); border: var(--rule) solid var(--line); }
+.sp-swatch--ink::before { background: var(--ink); }
+.sp-swatch--paper::before { background: var(--paper); }
+.sp-swatch--surface::before { background: var(--surface); }
+.sp-swatch--line::before { background: var(--line); }
+.sp-swatch--muted::before { background: var(--muted); }
+.sp-swatch--accent::before { background: var(--accent); }
+.sp-swatch--accent-text::before { background: var(--accent-text); }
+.sp-swatch--panel::before { background: var(--panel); }
+.button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }

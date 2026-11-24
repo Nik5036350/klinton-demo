@@ -1,0 +1,37 @@
+/* Service pages and the services overview. Tokens only (base.css). */
+
+.svc-hero { padding-block: var(--s-6) var(--s-8); display: grid; gap: var(--s-5); }
+.svc-hero h1 { font-size: var(--fs-2xl); line-height: var(--lh-tight); letter-spacing: -0.03em; max-width: 18ch; }
+.svc-hero .lead { max-width: 40ch; color: var(--muted); }
+.svc-hero__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; }
+.svc-hero__phone { font-weight: var(--w-bold); text-decoration: none; padding-inline: var(--s-3); min-height: var(--tap); display: inline-flex; align-items: center; }
+
+/* advantages: a strip of four */
+.adv { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); border-block: var(--rule) solid var(--line); list-style: none; padding: 0; }
+.adv li { padding: var(--s-5) var(--s-5) var(--s-5) 0; }
+.adv li + li { border-top: var(--rule) solid var(--line); }
+@media (min-width: 48rem) {
+  .adv li + li { border-top: 0; border-left: var(--rule) solid var(--line); padding-left: var(--s-5); }
+}
+.adv h2 { font-size: var(--fs-m); margin-bottom: var(--s-2); }
+.adv p { font-size: var(--fs-s); color: var(--muted); }
+
+/* what is included */
+.included { display: grid; gap: var(--s-6) var(--gap); }
+@media (min-width: 48rem) { .included { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.included h3 { font-size: var(--fs-l); padding-bottom: var(--s-3); margin-bottom: var(--s-4); border-bottom: var(--rule-strong) solid currentColor; }
+
+/* organisation and price side by side */
+.split { display: grid; gap: var(--s-7) var(--gap); }
+@media (min-width: 60rem) { .split { grid-template-columns: 7fr 5fr; } }
+.split .prose p { color: var(--muted); }
+.price { background: var(--surface); border-radius: var(--radius); padding: var(--s-6); display: grid; gap: var(--s-4); align-content: start; }
+.price h2 { font-size: var(--fs-xl); line-height: 1.1; }
+.price .button { justify-self: start; }
+
+/* related services */
+.related { margin-top: var(--s-6); }
+
+/* overview */
+.svc-group + .svc-group { margin-top: var(--s-8); }
+.svc-group h2 { margin-bottom: var(--s-5); }
