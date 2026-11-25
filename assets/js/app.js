@@ -3,7 +3,7 @@
 // figures show their final values and the request block shows its contacts.
 // Listeners and observers are attached once; nothing runs on an idle page.
 
-import { read, write } from './storage.js';
+import { read, write } from './storage.js?v=5c60e4ac88';
 
 const doc = document;
 const media = (q) => window.matchMedia(q).matches;
@@ -19,7 +19,7 @@ export function track(name, params) {
 }
 
 function initAnalytics() {
-  const load = () => import('./analytics.js')
+  const load = () => import('./analytics.js?v=5c60e4ac88')
     .then((m) => {
       if (!m.start()) return;
       analytics = m;
@@ -177,7 +177,7 @@ function initCopy() {
 async function initRequestFrames() {
   const frames = doc.querySelectorAll('[data-request-frame]');
   if (!frames.length) return;
-  const { themeFor, watchFrame, paramsFromLocation, frameUrlWith, frameHeightFrom } = await import('./request.js');
+  const { themeFor, watchFrame, paramsFromLocation, frameUrlWith, frameHeightFrom } = await import('./request.js?v=5c60e4ac88');
   const theme = themeFor(media('(prefers-contrast: more)'));
   // The form reports its content height; the frame follows it, so there is no
   // inner scrollbar and no empty space. When it shrinks after sending and the

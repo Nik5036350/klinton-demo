@@ -3,7 +3,7 @@
 // The dialog closes with Escape, the close button, a click outside the letter,
 // and the browser's back button; focus returns to the thumbnail.
 
-import { track } from './app.js';
+import { track } from './app.js?v=5c60e4ac88';
 
 const links = document.querySelectorAll('a[data-letter]');
 

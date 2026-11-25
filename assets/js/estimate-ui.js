@@ -3,10 +3,10 @@
 // change at once, the last input is remembered for the browser session, and
 // the estimate can be carried into the request form.
 
-import { estimate, describe } from './estimate.js';
-import { rules } from './prices.js';
-import { read, write } from './storage.js';
-import { track } from './app.js';
+import { estimate, describe } from './estimate.js?v=5c60e4ac88';
+import { rules } from './prices.js?v=5c60e4ac88';
+import { read, write } from './storage.js?v=5c60e4ac88';
+import { track } from './app.js?v=5c60e4ac88';
 
 const form = document.getElementById('estimate');
 if (form) {

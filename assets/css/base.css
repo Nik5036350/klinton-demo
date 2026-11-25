@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Onest";
-  src: url("/assets/fonts/onest-var.woff2") format("woff2");
+  src: url("/assets/fonts/onest-var.woff2?v=b3d7f44a47") format("woff2");
   font-weight: 100 900;
   font-display: swap;
 }
@@ -236,8 +236,9 @@ a:hover > .arrow::after, .arrow:hover::after { transform: translateX(3px); }
 }
 .phonebar .button { padding-inline: var(--s-3); }
 .phonebar[data-hidden] { transform: translateY(110%); }
-@media (max-width: 63.99rem) { body { padding-bottom: calc(var(--bar-h) + var(--notice-h, 0px)); } }
-@media (min-width: 64rem) { body { padding-bottom: var(--notice-h, 0px); } }
+/* room for the phone bar and the cookie notice, inside the footer so it takes the footer's colour */
+@media (max-width: 63.99rem) { .footer { padding-bottom: calc(var(--s-6) + var(--bar-h) + var(--notice-h, 0px)); } }
+@media (min-width: 64rem) { .footer { padding-bottom: calc(var(--s-6) + var(--notice-h, 0px)); } }
 @media (min-width: 64rem) { .phonebar { display: none; } }
 
 /* breadcrumbs */
@@ -351,7 +352,7 @@ a:hover > .arrow::after, .arrow:hover::after { transform: translateX(3px); }
 @media (min-width: 64rem) { .notice { bottom: var(--s-4); right: auto; } }
 
 /* footer */
-.footer { padding-block: var(--s-8) var(--s-6); font-size: var(--fs-s); }
+.footer { padding-top: var(--s-8); font-size: var(--fs-s); } /* bottom: see "room for the phone bar" */
 .footer__grid { display: grid; gap: var(--s-7) var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
 .footer h2 { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: var(--s-3); }
 .footer ul { list-style: none; padding: 0; }
