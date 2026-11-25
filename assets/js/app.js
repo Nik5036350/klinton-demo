@@ -6,7 +6,6 @@
 import { read, write } from './storage.js';
 
 const doc = document;
-const root = doc.documentElement;
 const media = (q) => window.matchMedia(q).matches;
 const reducedMotion = () => media('(prefers-reduced-motion: reduce)');
 
@@ -30,39 +29,6 @@ function initAnalytics() {
   const idle = () => ('requestIdleCallback' in window ? requestIdleCallback(load, { timeout: 4000 }) : setTimeout(load, 1));
   if (doc.readyState === 'complete') idle();
   else window.addEventListener('load', idle, { once: true });
-}
-
-// ---------- light / dark ----------
-// The page follows the system preference until the visitor picks a theme;
-// the pick is saved and applied before the first paint by the small inline
-// script in <head>, so later pages never flash the other theme.
-const THEME_COLOR = { light: '#f6f3ec', dark: '#12110e' };
-export const isDark = () => (root.dataset.theme ? root.dataset.theme === 'dark' : media('(prefers-color-scheme: dark)'));
-
-function initTheme() {
-  const btn = doc.querySelector('[data-theme-toggle]');
-  const metas = [...doc.querySelectorAll('meta[name="theme-color"]')];
-  const original = metas.map((m) => m.content);
-  const paint = () => {
-    const dark = isDark();
-    metas.forEach((m, i) => { m.content = root.dataset.theme ? THEME_COLOR[root.dataset.theme] : original[i]; });
-    if (!btn) return;
-    btn.dataset.mode = dark ? 'dark' : 'light';
-    btn.setAttribute('aria-pressed', String(dark));
-    btn.title = dark ? 'Включить светлую тему' : 'Включить тёмную тему';
-  };
-  if (btn) {
-    btn.hidden = false;
-    btn.addEventListener('click', () => {
-      const next = isDark() ? 'light' : 'dark';
-      root.dataset.theme = next;
-      write('local', 'theme', next, { maxBytes: 16 });
-      paint();
-      track('theme', { mode: next });
-    });
-  }
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', paint);
-  paint();
 }
 
 // ---------- menu ----------
@@ -212,7 +178,7 @@ async function initRequestFrames() {
   const frames = doc.querySelectorAll('[data-request-frame]');
   if (!frames.length) return;
   const { themeFor, watchFrame, paramsFromLocation, frameUrlWith, frameHeightFrom } = await import('./request.js');
-  const theme = themeFor(isDark(), media('(prefers-contrast: more)'));
+  const theme = themeFor(media('(prefers-contrast: more)'));
   // The form reports its content height; the frame follows it, so there is no
   // inner scrollbar and no empty space. When it shrinks after sending and the
   // confirmation is not fully visible (above the screen, under the sticky
@@ -268,7 +234,6 @@ async function initRequestFrames() {
   }
 }
 
-initTheme();
 initMenu();
 initPhoneBar();
 initNotice();

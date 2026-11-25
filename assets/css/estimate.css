@@ -14,8 +14,8 @@
 .field__hint { font-size: var(--fs-xs); color: var(--muted); }
 .field__error { font-size: var(--fs-s); color: var(--error); font-weight: var(--w-bold); min-height: 1.4em; }
 
-/* result: a fixed-size panel, so changing numbers never move the page */
-.calc__result { display: grid; gap: var(--s-3); align-content: space-between; padding: var(--s-6); border-radius: var(--radius); min-height: 18rem; border: var(--rule) solid var(--panel-line); }
+/* result: a fixed-size box, so changing numbers never move the page */
+.calc__result { display: grid; gap: var(--s-3); align-content: space-between; padding: var(--s-6); border-radius: var(--radius); min-height: 18rem; background: var(--paper); border: var(--rule) solid var(--line); }
 .calc__label { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
 .calc__sum { font-size: clamp(2.25rem, 1.6rem + 3vw, 3.75rem); font-weight: var(--w-black); letter-spacing: -0.04em; line-height: 1; font-feature-settings: "pnum", "lnum"; }
 .calc__period { color: var(--muted); }

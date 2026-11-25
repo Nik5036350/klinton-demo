@@ -21,8 +21,10 @@ export function buildFormUrl(formId, params = {}) {
   return url;
 }
 
-export function themeFor(prefersDark, prefersContrast) {
-  return (prefersDark ? 'dark' : 'light') + (prefersContrast ? '-hc' : '');
+// The site has one light appearance, so the form is always light; a visitor
+// who asks for more contrast gets Yandex Forms' high-contrast light theme.
+export function themeFor(prefersContrast) {
+  return prefersContrast === true ? 'light-hc' : 'light';
 }
 
 // A frame fires "load" even when it shows the browser's own error page

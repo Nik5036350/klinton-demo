@@ -5,11 +5,8 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-eYMB2ugiMoZHsyxJBEIiujiSNKfkmXa+Xslz9p63etw=' https://mc.yandex.ru https://yastatic.net; img-src 'self' data: https://mc.yandex.ru https://mc.yandex.com https://vk.com; connect-src 'self' https://mc.yandex.ru https://mc.yandex.com https://forms.yandex.ru; frame-src https://forms.yandex.ru https://cloud.yandex.ru https://mc.yandex.ru https://mc.yandex.com; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
-<meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
-<!-- applies a saved light/dark choice before the first paint; its hash is in the policy above -->
-<script>try{var t=localStorage.getItem("theme");if(t==='"dark"'||t==='"light"')document.documentElement.setAttribute("data-theme",JSON.parse(t))}catch(e){}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://mc.yandex.ru https://yastatic.net; img-src 'self' data: https://mc.yandex.ru https://mc.yandex.com https://vk.com; connect-src 'self' https://mc.yandex.ru https://mc.yandex.com https://forms.yandex.ru; frame-src https://forms.yandex.ru https://cloud.yandex.ru https://mc.yandex.ru https://mc.yandex.com; style-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="theme-color" content="#f6f3ec">
 <link rel="preload" href="/assets/fonts/onest-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/base.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -17,10 +14,10 @@
 <script type="module" src="/assets/js/app.js"></script>
 <!-- /shared:head -->
 <title>Клининговая компания в СПб для бизнеса — КлинТон</title>
-<meta name="description" content="Уборка офисов, складов, производств и магазинов в Санкт-Петербурге. Работаем по договору с юрлицами. Выезд и расчёт бесплатно: +7 (812) 312-35-90.">
+<meta name="description" content="Уборка офисов, складов, производств и магазинов по договору с юрлицами: Санкт-Петербург и объекты по всей России. Расчёт бесплатно: +7 (812) 312-35-90.">
 <link rel="canonical" href="https://www.klinton.ru/">
 <meta property="og:title" content="Клининговая компания в СПб для бизнеса — КлинТон">
-<meta property="og:description" content="Уборка офисов, складов, производств и магазинов в Санкт-Петербурге. Работаем по договору с юрлицами. Выезд и расчёт бесплатно.">
+<meta property="og:description" content="Уборка офисов, складов, производств и магазинов по договору с юрлицами: Санкт-Петербург и объекты по всей России. Выезд и расчёт бесплатно.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.klinton.ru/">
 <meta property="og:image" content="https://www.klinton.ru/assets/img/share.jpg">
@@ -35,7 +32,7 @@
   "@id": "https://www.klinton.ru/#org",
   "name": "КлинТон",
   "legalName": "ООО «КлинТон»",
-  "description": "Профессиональная уборка коммерческой недвижимости для юридических лиц в Санкт-Петербурге и Ленинградской области.",
+  "description": "Профессиональная уборка коммерческой недвижимости для юридических лиц: Санкт-Петербург, Ленинградская область и объекты по всей России.",
   "url": "https://www.klinton.ru/",
   "logo": "https://www.klinton.ru/assets/img/apple-touch-icon.png",
   "image": "https://www.klinton.ru/assets/img/share.jpg",
@@ -49,7 +46,7 @@
     "postalCode": "197347",
     "addressCountry": "RU"
   },
-  "areaServed": ["Санкт-Петербург", "Ленинградская область"],
+  "areaServed": [{"@type": "Country", "name": "Россия"}, {"@type": "City", "name": "Санкт-Петербург"}, {"@type": "AdministrativeArea", "name": "Ленинградская область"}, {"@type": "City", "name": "Москва"}, {"@type": "AdministrativeArea", "name": "Московская область"}, {"@type": "City", "name": "Новосибирск"}, {"@type": "City", "name": "Омск"}, {"@type": "City", "name": "Нижний Новгород"}],
   "sameAs": ["https://vk.com/klintoncleaning"]
 }
 </script>
@@ -73,9 +70,9 @@
 <a class="skip" href="#main">Перейти к содержанию</a>
 <header class="header" id="top">
   <div class="wrap header__row">
-    <a class="brand" href="/" aria-current="page">
-      <span class="brand__name" data-owner-todo="векторный логотип">Клин<b>Тон</b></span>
-      <span class="brand__tag">клининг для бизнеса</span>
+    <a class="brand" href="/" aria-current="page" aria-label="КлинТон — на главную">
+      <svg class="brand__mark" viewBox="4 9 485 481" aria-hidden="true" focusable="false" data-owner-todo="исходный векторный логотип от владельца"><path fill="currentColor" d="M5 9h19l-3 480H4zM52 9h7L35 196h-7zM28 190h14l26 299H48zM87 9l311 1.5V23L87 22zM87 46h19l-2 387H84zM84 415h43v18H84zM145 46h18l-2 387h-19zM187 47h19l-2 386h-19zM235 47h18l-3 386h-18zM200 47h8.5l28.5 386h-6zM281 9h19l-2 424h-19zM325 157a34 110 0 0 1 68 0v167a34 110 0 0 1-68 0zM346.5 118v245a14 60 0 0 0 28 0V118a14 60 0 0 0-28 0zM423 11h18l-2 478h-19zM435 11h8l29 478h-7zM471 12h17l-2 477h-19z"/></svg>
+      <span class="brand__tag">клининг для&nbsp;бизнеса</span>
     </a>
     <nav class="header__nav" id="site-nav" aria-label="Основное меню">
       <ul>
@@ -88,10 +85,6 @@
       </ul>
     </nav>
     <p class="header__note">Работаем только с юридическими лицами</p>
-    <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Тёмная тема">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
-    </button>
     <a class="header__phone" href="tel:+78123123590">+7 (812) 312-35-90</a>
     <a class="button header__cta" href="#zayavka">Получить расчёт</a>
     <a class="header__menu" href="#footer-nav" aria-controls="site-nav">Меню</a>
@@ -104,7 +97,7 @@
 <!-- /shared:header -->
 <main id="main">
 
-  <section class="hero panel blueprint" aria-labelledby="hero-title">
+  <section class="hero blueprint" aria-labelledby="hero-title">
     <svg class="hero__plan" viewBox="0 0 600 600" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
       <rect x="40" y="60" width="500" height="500"/>
       <path d="M40 280H250M250 60V210M250 280V560M370 280H540M370 280V420M370 490V560M170 420H250"/>
@@ -113,7 +106,7 @@
     </svg>
     <div class="wrap hero__inner">
       <div class="hero__text">
-      <p class="hero__kicker">Клининговая компания · Санкт-Петербург</p>
+      <p class="hero__kicker">Клининговая компания · <span class="nowrap">Санкт-Петербург</span> · <span class="nowrap">работаем по всей России</span></p>
       <h1 class="hero__title" id="hero-title">Уборка офисов, складов и производств <em>для&nbsp;бизнеса</em></h1>
       <p class="hero__lead">Работаем только с юридическими лицами — по договору, со своим штатом и техникой. Менеджер приедет на объект и рассчитает стоимость бесплатно.</p>
       <div class="hero__actions">
@@ -138,13 +131,9 @@
       </div>
       <p class="muted">Девять из десяти клиентов продлевают договор на следующий год.</p>
     </div>
-    <ul class="clients" role="list" data-owner-todo="логотипы клиентов и разрешение назвать каждого">
-      <li>Газпром</li>
-      <li>Tele2</li>
-      <li>Открытие</li>
-      <li>Prostor</li>
-      <li>Litum</li>
-    </ul>
+<!-- shared:clients -->
+<ul class="clients" role="list" data-owner-todo="логотипы клиентов и разрешение назвать каждого"><li>Газпром</li><li>Tele2</li><li>Открытие</li><li>Prostor</li><li>Litum</li></ul>
+<!-- /shared:clients -->
   </section>
 
   <section class="section wrap" id="uslugi" aria-labelledby="uslugi-title">
@@ -271,9 +260,20 @@
     </div>
   </section>
 
+  <div class="wrap">
+<!-- shared:geography -->
+<section class="section geography" aria-labelledby="geography-title">
+  <h2 class="h2" id="geography-title">Где мы работаем</h2>
+  <p class="geography__lead">Офис — в Санкт-Петербурге. Убираем объекты по всей России: сейчас работаем в этих городах и регионах.</p>
+  <ul class="geography__list" role="list"><li>Санкт-Петербург <small>офис</small></li><li>Ленинградская область</li><li>Москва</li><li>Московская область</li><li>Новосибирск</li><li>Омск</li><li>Нижний Новгород</li></ul>
+  <p class="geography__more">Вашего города нет в списке? <a href="#zayavka">Оставьте заявку</a> — ответим, сможем ли взять объект.</p>
+</section>
+<!-- /shared:geography -->
+  </div>
+
 </main>
 <!-- shared:request -->
-<section class="request panel" id="zayavka" aria-labelledby="zayavka-title">
+<section class="request" id="zayavka" aria-labelledby="zayavka-title">
   <div class="wrap request__grid">
     <div>
       <p class="eyebrow" data-index="→">Заявка</p>
@@ -300,8 +300,8 @@
   <div class="wrap">
     <div class="footer__grid">
       <div class="footer__brand">
-        <p class="brand__name">Клин<b>Тон</b></p>
-        <p class="muted">Профессиональная уборка коммерческой недвижимости. Санкт-Петербург и Ленинградская область. Работаем только с юридическими лицами.</p>
+        <p class="footer__mark"><svg class="brand__mark brand__mark--full" viewBox="4 9 485 481" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5 9h19l-3 480H4zM52 9h7L35 196h-7zM28 190h14l26 299H48zM87 9l311 1.5V23L87 22zM87 46h19l-2 387H84zM84 415h43v18H84zM145 46h18l-2 387h-19zM187 47h19l-2 386h-19zM235 47h18l-3 386h-18zM200 47h8.5l28.5 386h-6zM281 9h19l-2 424h-19zM325 157a34 110 0 0 1 68 0v167a34 110 0 0 1-68 0zM346.5 118v245a14 60 0 0 0 28 0V118a14 60 0 0 0-28 0zM423 11h18l-2 478h-19zM435 11h8l29 478h-7zM471 12h17l-2 477h-19z"/><path fill="none" stroke="currentColor" stroke-width="4" d="M118.5 465.5a8.5 13 0 1 0 0 18M145 459v28h12M194 461h-14v26h15M180 473.5h12M218 489l8.5-30 8.5 30M221 478.5h11M259.5 489v-30l16 30v-30M302 459v30M328 489v-30l16 30v-30M386.5 465.5a9 13 0 1 0 0 17V476H379"/></svg><span class="visually-hidden">КлинТон</span></p>
+        <p class="muted">Профессиональная уборка коммерческой недвижимости. Санкт-Петербург, Ленинградская область и объекты по всей России. Работаем только с юридическими лицами.</p>
       </div>
       <nav id="footer-nav" aria-labelledby="footer-nav-title">
         <h2 id="footer-nav-title">Компания</h2>
